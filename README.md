@@ -57,7 +57,7 @@ For SQL queries — run in SQLite, DBeaver, or any SQL client against claims_dat
 ---
 
 ## Key Findings
-- **Health claims** take ~2.8x longer to settle than Motor claims on average
+- **Health claims** take ~4.6x longer to settle than Motor claims on average
 - **London** carries the highest total exposure but **Leeds** has the highest dispute rate
 - **H01** handles the most volume; **H03** has the highest settlement rate
 - **15% of claims** are fraud-flagged — all concentrated in Health and Home categories
