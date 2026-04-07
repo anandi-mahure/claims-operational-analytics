@@ -13,9 +13,9 @@ from matplotlib.patches import FancyArrowPatch
 import numpy as np
 import os
 
-df = pd.read_csv('/home/claude/claims-operational-analytics/claims_data.csv', parse_dates=['claim_date'])
+df = pd.read_csv('claims_data.csv', parse_dates=['claim_date'])
 df['claim_month'] = df['claim_date'].dt.to_period('M')
-os.makedirs('/home/claude/claims-operational-analytics/charts', exist_ok=True)
+os.makedirs('charts', exist_ok=True)
 
 # ── PALETTE ───────────────────────────────────────────────────
 C1  = '#1F4E79'   # dark navy
@@ -97,7 +97,7 @@ add_titles(ax, 'Average Settlement Time by Claim Type',
            'Health claims take 45.5 days on average — 4.6× longer than Motor. Both Home and Health breach the 30-day SLA threshold.')
 watermark(ax)
 plt.tight_layout()
-plt.savefig('/home/claude/claims-operational-analytics/charts/01_settlement_by_type.png',
+plt.savefig('charts/01_settlement_by_type.png',
             dpi=180, bbox_inches='tight', facecolor=WHT)
 plt.close()
 print("Chart 1 done")
@@ -152,7 +152,7 @@ add_titles(ax, 'Total Claims Exposure by Region',
            'London carries 44% of total exposure (£215K). Leeds has the highest dispute rate despite lower volume — a quality signal worth investigating.')
 watermark(ax)
 plt.tight_layout()
-plt.savefig('/home/claude/claims-operational-analytics/charts/02_exposure_by_region.png',
+plt.savefig('charts/02_exposure_by_region.png',
             dpi=180, bbox_inches='tight', facecolor=WHT)
 plt.close()
 print("Chart 2 done")
@@ -216,7 +216,7 @@ add_titles(ax1, 'Monthly Claims Volume & Value Trend',
            'Volume stabilised at 10 claims/month from Feb–Apr. March peak (£144K) driven by high-value Health and Home claims.')
 watermark(ax1)
 plt.tight_layout()
-plt.savefig('/home/claude/claims-operational-analytics/charts/03_monthly_trend.png',
+plt.savefig('charts/03_monthly_trend.png',
             dpi=180, bbox_inches='tight', facecolor=WHT)
 plt.close()
 print("Chart 3 done")
@@ -303,7 +303,7 @@ fig.text(0.99, -0.02, 'Anandi M | MSc Data Science, University of Bath',
          fontsize=7, color='#AAAAAA', ha='right')
 
 plt.tight_layout()
-plt.savefig('/home/claude/claims-operational-analytics/charts/04_handler_scorecard.png',
+plt.savefig('charts/04_handler_scorecard.png',
             dpi=180, bbox_inches='tight', facecolor=WHT)
 plt.close()
 print("Chart 4 done")
@@ -380,7 +380,7 @@ fig.text(0.99, -0.02, 'Anandi M | MSc Data Science, University of Bath',
          fontsize=7, color='#AAAAAA', ha='right')
 
 plt.tight_layout()
-plt.savefig('/home/claude/claims-operational-analytics/charts/05_portfolio_overview.png',
+plt.savefig('charts/05_portfolio_overview.png',
             dpi=180, bbox_inches='tight', facecolor=WHT)
 plt.close()
 print("Chart 5 done")
